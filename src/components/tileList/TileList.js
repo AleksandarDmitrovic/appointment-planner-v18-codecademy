@@ -1,15 +1,12 @@
 import React from "react";
+import { Tile } from "../tile/Tile";
 
 export const TileList = ({ items }) => {
   return items.map((item, index) => {
+    const { name, ...description } = item;
     return (
       <div key={index}>
-        <h1>{item.name || items.appointmentName}</h1>
-        {item.phoneNumber && <p>Phone: {item.phoneNumber}</p>}
-        {item.email && <p>Email: {item.email}</p>}
-        {item.date && <p>Date: {item.date}</p>}
-        {item.time && <p>Time: {item.time}</p>}
-        {item?.contact?.name && <p>Customer Name: {item.contact.name}</p>}
+        <Tile name={name} description={description} />
       </div>
     );
   });

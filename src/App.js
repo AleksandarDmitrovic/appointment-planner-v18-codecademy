@@ -28,8 +28,8 @@ function App() {
     setContacts((prevContacts) => [...prevContacts, newContact]);
   };
 
-  const addAppointment = (appointmentName, contact, date, time) => {
-    const newAppointment = { appointmentName, contact, date, time };
+  const addAppointment = (name, contact, date, time) => {
+    const newAppointment = { name, contact, date, time };
     // Check if the appointment already exists
     if (
       !appointments.some(
