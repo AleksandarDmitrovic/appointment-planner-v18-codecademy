@@ -1,4 +1,5 @@
 import React from "react";
+import { ContactPicker } from "../contactPicker/ContactPicker";
 
 const getTodayString = () => {
   const [month, day, year] = new Date().toLocaleDateString("en-US").split("/");
@@ -41,7 +42,13 @@ export const AppointmentForm = ({
         onChange={(e) => setTime(e.target.value)}
         required
       />
-      <button type="submit">Add Contact</button>
+      <ContactPicker
+        contacts={contacts}
+        onChange={(e) => setContact(e.target.value)}
+        value={contact}
+        name="contact"
+      />
+      <button type="submit">Add Appointment</button>
     </form>
   );
 };
