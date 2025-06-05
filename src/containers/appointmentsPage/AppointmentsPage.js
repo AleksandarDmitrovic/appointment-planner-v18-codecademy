@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const AppointmentsPage = ({ addAppointment, contacts }) => {
+export const AppointmentsPage = ({
+  appointments,
+  addAppointment,
+  contacts,
+}) => {
   /*
   Define state variables for 
   appointment info
@@ -41,6 +45,7 @@ export const AppointmentsPage = ({ addAppointment, contacts }) => {
       <hr />
       <section>
         <h2>Appointments</h2>
+        <TileList items={appointments} />
       </section>
     </div>
   );
