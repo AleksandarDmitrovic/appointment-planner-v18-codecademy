@@ -33,6 +33,7 @@ export const ContactForm = ({
         onChange={(e) => setEmail(e.target.value)}
         required
       />
+      <button type="submit">Add Contact</button>
     </form>
   );
 };
