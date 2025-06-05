@@ -22,6 +22,12 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
+  const addContact = (name, phoneNumber, email) => {
+    const newContact = { name, phoneNumber, email };
+    if (!contacts.some((contact) => contact.name === name)) {
+      setContacts((prevContacts) => [...prevContacts, newContact]);
+    }
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
