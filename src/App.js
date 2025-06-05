@@ -29,6 +29,21 @@ function App() {
     }
   };
 
+  const addAppointment = (appointmentName, contact, date, time) => {
+    const newAppointment = { appointmentName, contact, date, time };
+    // Check if the appointment already exists
+    if (
+      !appointments.some(
+        (appointment) => appointment.time === time && appointment.date === date
+      )
+    ) {
+      setAppointments((prevAppointments) => [
+        ...prevAppointments,
+        newAppointment,
+      ]);
+    }
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
